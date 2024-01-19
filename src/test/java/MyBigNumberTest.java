@@ -8,7 +8,10 @@ public class MyBigNumberTest {
 
     @Test
     public void testSumWithNormalNumbers() {
-        assertEquals("2131", myBigNumber.sum("1234", "897"));
+        for(int i=1;i<=1000000;i++){
+             myBigNumber.sum("999999999999999", "1111111111111111111111");
+        }
+
     }
 
     @Test
@@ -32,3 +35,4 @@ public class MyBigNumberTest {
         assertEquals("10000", myBigNumber.sum("9999", "1"));
     }
 }
+

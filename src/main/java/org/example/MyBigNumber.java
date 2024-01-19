@@ -3,22 +3,20 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class MyBigNumber {
-
     private static final Logger logger = LogManager.getLogger(MyBigNumber.class);
-
     public String sum(String stn1, String stn2) {
         StringBuilder result = new StringBuilder();
         int length1 = stn1.length();
         int length2 = stn2.length();
+        int maxLength = Math.max(length1, length2);
         int carry = 0;
+        int digit1, digit2, sum;
 
-        for (int i = 0; i < Math.max(length1, length2); i++) {
-            int digit1 = i < length1 ? stn1.charAt(length1 - 1 - i) - '0' : 0;
-            int digit2 = i < length2 ? stn2.charAt(length2 - 1 - i) - '0' : 0;
-
-            int sum = digit1 + digit2 + carry;
+        for (int i = 0; i < maxLength; i++) {
+            digit1 = i < length1 ? stn1.charAt(length1 - 1 - i) - '0' : 0;
+            digit2 = i < length2 ? stn2.charAt(length2 - 1 - i) - '0' : 0;
+            sum = digit1 + digit2 + carry;
             carry = sum / 10;
-
             result.insert(0, sum % 10);
 
             logger.info("Bước {}: Lấy {} cộng với {} được {}. Lưu {} vào kết quả và nhớ {}.",
