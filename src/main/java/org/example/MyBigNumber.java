@@ -19,7 +19,7 @@ public class MyBigNumber {
             carry = sum / 10;
             result.insert(0, sum % 10);
 
-            logger.info("Bước {}: Lấy {} cộng với {} được {}. Lưu {} vào kết quả và nhớ {}.",
+            logger.info("Step {}: Take {} add {} we hvae {}. Save {} into result {}.",
                     i + 1, digit1, digit2, sum, sum % 10, carry);
         }
 
